@@ -827,6 +827,7 @@ GameObject:
   - component: {fileID: 760275036}
   - component: {fileID: 760275035}
   - component: {fileID: 760275039}
+  - component: {fileID: 760275040}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -927,6 +928,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef96294d23eec045b2ce4afe63143ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pendulum: {fileID: 972331432}
+--- !u!114 &760275040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760275034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379e830ce3bfdf84498e4987bb1532b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &779263181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,12 +1036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c142f9b19ef6144a77f98a26a5d2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxdegree: 30
+  maxdegree: 45
   step: 5
-  degree: 0
-  eachstep: 0
 --- !u!4 &972331434
 Transform:
   m_ObjectHideFlags: 0
