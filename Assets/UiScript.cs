@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class UiScript : MonoBehaviour
 {
-    // 单摆
-    public GameObject pendulum;
+    // 单摆1
+    public GameObject pendulum1;
+
+    // 单摆2
+    public GameObject pendulum2;
 
     private Button btnRunStrop;
     private Button btnNextStep;
@@ -33,30 +36,50 @@ public class UiScript : MonoBehaviour
 
     void RunStop()
     {
-        PendulumScript pendulumScript = pendulum.GetComponent<PendulumScript>();
-
         Text text = btnRunStrop.transform.Find("Text").GetComponent<Text>();
         if (text.text == "运行")
         {
             text.text = "停止";
-            pendulumScript.Run();
+            DoRun(pendulum1, true);
+            DoRun(pendulum2, true);
         }
         else
         {
             text.text = "运行";
-            pendulumScript.Stop();
+            DoRun(pendulum1,false);
+            DoRun(pendulum2,false);
         }
     }
 
     void Next()
     {
-        PendulumScript pendulumScript = pendulum.GetComponent<PendulumScript>();
-
         Text text = btnRunStrop.transform.Find("Text").GetComponent<Text>();
         if (text.text == "运行")
         {
-            pendulumScript.NextStep();
+            DoNextStep(pendulum1);
+            DoNextStep(pendulum2);
         }
+
+    }
+
+    private void DoRun(GameObject pendulum, bool run)
+    {
+        PendulumScript pendulumScript = pendulum.GetComponent<PendulumScript>();
+        if (run)
+        {
+            pendulumScript.Run();
+        }
+        else
+        {
+            pendulumScript.Stop();
+        }
+
+    }
+
+    private void DoNextStep(GameObject pendulum)
+    {
+        PendulumScript pendulumScript = pendulum.GetComponent<PendulumScript>();
+        pendulumScript.NextStep();
     }
 
     // Update is called once per frame
